@@ -1,12 +1,6 @@
 package triangle.abstractSyntaxTrees.visitors;
 
-import triangle.abstractSyntaxTrees.commands.AssignCommand;
-import triangle.abstractSyntaxTrees.commands.CallCommand;
-import triangle.abstractSyntaxTrees.commands.EmptyCommand;
-import triangle.abstractSyntaxTrees.commands.IfCommand;
-import triangle.abstractSyntaxTrees.commands.LetCommand;
-import triangle.abstractSyntaxTrees.commands.SequentialCommand;
-import triangle.abstractSyntaxTrees.commands.WhileCommand;
+import triangle.abstractSyntaxTrees.commands.*;
 
 public interface CommandVisitor<TArg, TResult> {
 
@@ -19,6 +13,8 @@ public interface CommandVisitor<TArg, TResult> {
 	TResult visitIfCommand(IfCommand ast, TArg arg);
 
 	TResult visitLetCommand(LetCommand ast, TArg arg);
+
+	TResult visitRepeatCommand(RepeatCommand ast, TArg arg);
 
 	TResult visitSequentialCommand(SequentialCommand ast, TArg arg);
 

@@ -189,6 +189,9 @@ public class Disassembler {
 		case DISPOSE:
 			System.out.print("dispose ");
 			break;
+		case BAR:
+			System.out.print("bar ");
+			break;
 		}
 	}
 

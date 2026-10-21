@@ -108,6 +108,7 @@ import triangle.codeGenerator.entities.TypeRepresentation;
 import triangle.codeGenerator.entities.UnknownAddress;
 import triangle.codeGenerator.entities.UnknownRoutine;
 import triangle.codeGenerator.entities.UnknownValue;
+import triangle.codeGenerator.entities.BarPrimitiveRoutine;
 
 public final class Encoder implements ActualParameterVisitor<Frame, Integer>,
 		ActualParameterSequenceVisitor<Frame, Integer>, ArrayAggregateVisitor<Frame, Integer>,
@@ -713,6 +714,7 @@ public final class Encoder implements ActualParameterVisitor<Frame, Integer>,
 	 * and Table 3 of the Triangle guide
 	 */
 	private final void elaborateStdEnvironment() {
+		StdEnvironment.barDecl.entity = new BarPrimitiveRoutine();
 		tableDetailsReqd = false;
 		elaborateStdConst(StdEnvironment.falseDecl, Machine.falseRep);
 		elaborateStdConst(StdEnvironment.trueDecl, Machine.trueRep);

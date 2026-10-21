@@ -15,7 +15,7 @@ public class BarPrimitiveRoutine extends RuntimeEntity implements RoutineEntity 
 
 	public void encodeCall(Emitter emitter, Frame frame) {
 		//machine code to load the literal value for 100, the Known Value class has the code to load a literal for any value
-		emitter.emit(OpCode.LOADL, 0, 100);
+		emitter.emit(OpCode.LOADL, 100, 100);
 		emitter.emit(OpCode.CALL, Register.PB, Primitive.MULT);
 	}
 
